@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
-interface IWrapperProp {
-    children: ReactElement;
-}
-
-export const Wrapper: React.FC<IWrapperProp> = ({ children }) => {
+export const Wrapper = ({
+    children,
+}: {
+    children: ReactNode;
+}): ReactElement => {
     return <div className="min-vh-100 d-flex flex-column">{children}</div>;
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ColorHeader = styled.div`
+export const ColorHeader = styled.header`
     background-color: var(--color-black);
     padding-top: 20px;
     padding-bottom: 20px;
