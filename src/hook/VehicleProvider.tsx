@@ -2,7 +2,6 @@ import {
     createContext,
     useCallback,
     useContext,
-    useEffect,
     useMemo,
     useState,
 } from 'react';
@@ -12,8 +11,10 @@ import Api from '../services/api';
 interface IVehicleContextProp {
     vehicles: VehicleType[];
     vehicle: VehicleType | null;
+    pageCount: number;
+    currentPage: number;
 
-    getVehicles: (page: number) => void;
+    getVehicles: (page: number, searchText: string) => void;
 }
 
 interface IVehicleProviderProps {
@@ -39,15 +40,24 @@ export const VehicleProvider: React.FC<IVehicleProviderProps> = ({
 }) => {
     const [vehicles, setVehicles] = useState<VehicleType[]>([]);
     const [vehicle, setVehicle] = useState<VehicleType | null>(null);
+    const [pageCount, setPageCount] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
 
-    const getVehicles = useCallback((page = 1) => {
-        const params: { page?: number } = {
+    const getVehicles = useCallback((page = 1, searchText = '') => {
+        const limit = 10;
+        const offset = limit * (page - 1);
+        setCurrentPage(page);
+
+        const params: { page?: number; offset?: number; search?: string } = {
             page,
+            offset,
+            search: searchText,
         };
 
         Api.get('/vehicles', { params })
             .then(response => {
                 setVehicles(response?.data?.results);
+                setPageCount(Math.ceil((response?.data?.count ?? 0) / limit));
             })
             .catch(() => {
                 setVehicles([]);
@@ -59,9 +69,11 @@ export const VehicleProvider: React.FC<IVehicleProviderProps> = ({
         () => ({
             vehicles,
             vehicle,
+            pageCount,
+            currentPage,
             getVehicles,
         }),
-        [vehicles, vehicle, getVehicles]
+        [vehicles, vehicle, pageCount, currentPage, getVehicles]
     );
 
     return (
