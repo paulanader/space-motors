@@ -1,4 +1,4 @@
-SWAPI The Star Wars API - consumo de dados
+SWAPI The Star Wars API - Consumo de dados
 
 Demonstração: (https://paula-nader-space-motors.netlify.app)[https://paula-nader-space-motors.netlify.app]
 
