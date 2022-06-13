@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+SWAPI The Star Wars API - consumo de dados
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demonstração: (https://paula-nader-space-motors.netlify.app)[https://paula-nader-space-motors.netlify.app]
 
-## Available Scripts
+Tecnologias
+Front-end: ReactJS (Typescript)
+Instalação
+Pré-requisitos:
 
-In the project directory, you can run:
+Yarn (opcional)
+Após clonar o projeto e instalar os pré-requisitos, execute a partir da pasta raiz:
 
-### `yarn start`
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ou
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+yarn
 
-### `yarn test`
+Crie o arquivo .env a partir do .env.example:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cp .env.example .env
+Preencha as variáveis de ambiente do .env com os dados abaixo:
 
-### `yarn build`
+REACT_APP_API_BASE_URL=https://swapi.dev/api
+REACT_APP_API_CEP_BASE_URL=https://viacep.com.br/ws
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após a instalação, para rodar o projeto, execute:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run start
+ou
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+yarn start
