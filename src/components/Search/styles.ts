@@ -13,11 +13,16 @@ export const MainContainer = styled.div`
 export const SeachButton = styled.button`
     background-color: var(--color-yellow);
     border: none;
-    font-size: 1.5rem;
 `;
 
 export const Input = styled.input`
     border: none;
-    @media (max-width: 576px) {
+`;
+
+export const ClearButton = styled.button`
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 `;

@@ -1,0 +1,21 @@
+export type CheckoutFormDataType = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    cpf_cnpj: string;
+    cep: string;
+    street: string;
+    number: string;
+    complement: string;
+    neighborhood: string;
+    city: string;
+    state: string;
+    ownerCard: string;
+    numberCard: string;
+    validity: string;
+    securityCode: string;
+    paymentType: string;
+    shouldFail: boolean;
+    notify: () => void;
+};
