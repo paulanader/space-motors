@@ -1,6 +1,6 @@
 SWAPI The Star Wars API - Consumo de dados
 
-Demonstração: [https://paula-nader-space-motors.netlify.app](https://paula-nader-space-motors.netlify.app)
+Demonstração: [https://paulanader-space-motors.netlify.app/](https://paulanader-space-motors.netlify.app/)
 
 Tecnologias
 Front-end: ReactJS (Typescript)
